@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Realización de la prueba</title>
+  </head>
+  <body>
+<!-- page header -->
+
+
+<h1>Realización de la prueba</h1>
+
+El resto de la prueba consiste en la implementación de una especificación de requisitos de un sistema cliente-servidor. La puntuación se asignará a diferentes entregas realizadas en el repositorio, con las siguientes condiciones:
+
+<ol>
+
+<li>
+Implemente una abstracción (módulo, función, clase, objeto, lo que desee)
+que genere los mensajes y sus respuestas adecuadas, tanto de la parte cliente
+como de la parte servidor) definidos en la especificación de requisitos,
+utilizando la metodología TDD (<em>Test-Driven Development</em>,
+Desarrollo dirigido por pruebas).
+La puntuación se asignará a diferentes entregas realizadas en el repositorio,
+con las siguientes condiciones:
+    <ul>
+    <li>Entregas etiquetadas como <code>"Test n"</code>. Deberán contener un caso de prueba que sea el único que no funcione en dicha entrega. Es necesario que los casos de prueba de las diferentes entregas sean funcionalmente distintos. Los casos de prueba deberán tratar de cubrir todas las situaciones especificadas en los requisitos. Cada caso de prueba funcionalmente distinto y adecuado a los requisitos del enunciado que sea ejecutado correctamente por el software sumará 0,5 puntos. Puede escribir todos los casos de prueba que estime oportunos (máximo 2 puntos)</li>
+
+    <li>Entregas etiquetadas como <code>"Test n OK"</code>. Deberán hacer funcionar un caso de prueba que fallaba en la entrega anterior. Cada una de estas entregas sumará 0,5 puntos siempre que todos los casos de prueba acumulados funcionen (máximo 2 puntos)</li>
+
+    <li>Entregas etiquetadas como <code>"Refactoring N"</code>. Deberán contener una recodificación (refactoring) del código, diferenciándose de la entrega anterior solamente en dicha recodificación pero no en los casos de prueba, que deberán ser los mismos de la entrega anterior. Sumarán 0,5 puntos si todos los casos de prueba funcionan (máximo 1 punto)</li>
+    </ul>
+</li>
+
+<li>
+Implemente el servidor del sistema especificado en los requisitos. El servidor deberá ejecutarse de forma continua, sin detenerse, y deberá aceptar conexiones de cualquier cliente, recibiendo los mensajes indicados y generando las respuestas adecuadas. Se sugiere el uso de la abstracción desarrollada en la pregunta anterior, así como etiquetar <code>"Servidor"</code> a la entrega que contiene la solución (3 puntos)
+</li>
+
+<li>
+Implemente el cliente del sistema especificado en los requisitos. El cliente deberá preguntar al usuario por la dirección del servidor, realizar una conexión y enviar un mínimo de 3 mensajes al servidor. El cliente deberá imprimir en su salida standard las respuestas recibidas del servidor (o cualquier condición de error que se produzca) y terminar tras el último mensaje. Se sugiere el uso de la abstracción desarrollada hace dos preguntas, así como etiquetar <code>"Cliente"</code> a la entrega que contiene la solución (2 puntos)
+</li>
+
+<li>
+Anote en el fichero <code>README</code> cuál de los tres puntos de escucha de la especificación de requisitos ha elegido para su servidor, así como el procedimiento y las herramientas necesarias para ejecutar el código de las respuestas anteriores: sistema operativo, herramientas de programación, de construcción, scripts, etc. (0,2 puntos)
+</li>
+
+</ol>
+
+En el siguiente enlace se indica la
+<a href="especificacion.html">especificación de requisitos</a>
+a implementar.
+
+
+<!-- page footer -->
+  </body>
+</html>

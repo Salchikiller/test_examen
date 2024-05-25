@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Especificación de requisitos</title>
+  </head>
+  <body>
+<!-- page header -->
+
+
+<h1>Especificación de requisitos a implementar</h1>
+
+Se desea realizar un sistema cliente-servidor con las siguientes características:
+<p>
+El servidor atenderá peticiones en <b>uno</b> de los tres puntos siguientes (puede elegir el que desee):
+<ol>
+<li>Puerto <b>TCP</b> número <b><code>N</code></b></li>
+<li>Puerto <b>UDP</b> número <b><code>N</code></b></li>
+<li>Socket local <code>/tmp/servicio<b>N</b></code></li>
+</ol>
+
+Donde <code><b>N</b> = 16000 + 10*su número de grupo de prácticas + su posición dentro del grupo</code> tomando como criterio de ordenación el índice alfabético de los apellidos de sus componentes (ejemplo: si su grupo es el <code>7</code> y es usted el primero de su grupo, <code><b>N</b>=16071</code>).
+<p>
+El servidor responderá a los siguientes mensajes de texto, enviados desde el cliente, con las respuestas que se indican a continuación; todos ellos deberán ir codificados en <code>UTF-8</code>:
+
+<ul>
+<li><b><code>FECHA</code></b> &rarr; el servidor responderá con la fecha actual del sistema</li>
+<li><b><code>HORA</code></b> &rarr;  el servidor responderá con la hora actual del sistema</li>
+<li>Cualquier otro mensaje &rarr; el servidor responderá <b><code>ERROR</code></b></li>
+</ul>
+
+
+<!-- page footer -->
+  </body>
+</html>
