@@ -7,15 +7,24 @@ def start_client(port):
         print(f"Connected to server at 127.0.0.1:{port}")
         
         for _ in range(3):
-            msg = input("Enter message for server (FECHA or HORA): ")
-            if msg not in ['FECHA', 'HORA']:
-                msg = 'ERROR'
-            client_socket.send(msg.encode('utf-8'))
-            response = client_socket.recv(1024).decode('utf-8')
-            print(f"Response from server: {response}")
+            try:
+                msg = input("Enter message for server (FECHA or HORA): ")
+                if msg not in ['FECHA', 'HORA']:
+                    msg = 'ERROR'
+                client_socket.send(msg.encode('utf-8'))
+                
+                response = client_socket.recv(1024).decode('utf-8')
+                if not response:
+                    print("Server has disconnected unexpectedly.")
+                    break
+                
+                print(f"Response from server: {response}")
+            except ConnectionResetError:
+                print("Server has disconnected unexpectedly.")
+                break
         
         client_socket.close()
-        print("Connection closed after 3 requests.")
+        print("Connection closed after 3 requests or server disconnection.")
     
     except ConnectionRefusedError:
         print("Server is not available or refused the connection.")
