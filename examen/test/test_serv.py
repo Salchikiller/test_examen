@@ -16,6 +16,11 @@ class TestServer(unittest.TestCase):
     def test_error(self):
         response = server.generate_response('ANY_OTHER_MESSAGE')
         self.assertEqual(response, 'ERROR')
+    
+    def test_additional_message(self):
+        # Forzamos el fallo de la prueba
+        response = server.generate_response('HELLO')
+        self.assertNotEqual(response, 'ERROR')
 
 
     
