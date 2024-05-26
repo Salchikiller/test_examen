@@ -13,11 +13,9 @@ class TestServer(unittest.TestCase):
         response = server.generate_response('HORA')
         self.assertRegex(response, r'\d{2}:\d{2}:\d{2}')
 
-def test_error(self):
-        # Forcing the test to fail
+    def test_error(self):
         response = server.generate_response('ANY_OTHER_MESSAGE')
-        self.assertNotEqual(response, 'ERROR')
-
+        self.assertEqual(response, 'ERROR')
 
 
     
