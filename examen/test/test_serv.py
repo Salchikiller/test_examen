@@ -8,10 +8,11 @@ class TestServer(unittest.TestCase):
         response = server.generate_response('FECHA')
         self.assertRegex(response, r'\d{4}-\d{2}-\d{2}')
 
+    
     def test_hora(self):
-        # Forcing the test to fail
         response = server.generate_response('HORA')
-        self.assertNotRegex(response, r'\d{2}:\d{2}:\d{2}')
+        self.assertRegex(response, r'\d{2}:\d{2}:\d{2}')
+
 
 
 
