@@ -1,5 +1,3 @@
-# app/servidor.py
-
 import socket
 import select
 from datetime import datetime
@@ -15,6 +13,10 @@ class Server:
             return datetime.now().strftime('%H:%M:%S')
         else:
             return 'ERROR'
+    
+    def send_response(self, client_socket, message):
+        response = self.generate_response(message)
+        client_socket.send(response.encode('utf-8'))
 
     def start_server(self):
         server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -41,8 +43,7 @@ class Server:
                     if data:
                         client_info = client_data[s]
                         if client_info['requests'] < 3:
-                            response = self.generate_response(data)
-                            s.send(response.encode('utf-8'))
+                            self.send_response(s, data)
                             client_info['requests'] += 1
                         if client_info['requests'] == 3:
                             inputs.remove(s)
