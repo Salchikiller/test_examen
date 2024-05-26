@@ -59,4 +59,4 @@ make clean
 - Si tienes algún problema, revisa los mensajes de error y asegúrate de que Python 3 esté correctamente instalado y accesible como `python3`.
 ```
 
-Puedes guardar este contenido en un archivo llamado `README.txt` en el directorio del proyecto. Este archivo proporcionará una guía clara sobre cómo clonar el repositorio, navegar al directorio correcto y ejecutar los comandos necesarios para iniciar el servidor, el cliente y ejecutar las pruebas.
+Puedes guardar este contenido en un archivo llamado `README.txt` en el directorio del proyecto. Este archivo proporcionará una guía clara sobre cómo clonar el repositorio, navegar al directorio correcto y ejecutar los comandos necesarios para iniciar el servidor, el cliente y ejecutar las pruebas.L
