@@ -1,6 +1,6 @@
 .PHONY: run_server run_client test clean
 
-SERVER_PORT=16071
+SERVER_PORT=16073
 
 run_server:
 	@echo "Starting server on port $(SERVER_PORT)..."

@@ -1,2 +1,62 @@
-En este directorio debe entregar los ficheros que conforman la respuesta al ejercicio.
-preuba uno de reppokskjsjs 
+
+```
+
+## Instrucciones
+
+### Clonar el Repositorio
+
+```bash
+git clone <URL_DEL_REPOSITORIO>
+cd examen
+```
+
+### Ejecutar el Servidor
+
+Para iniciar el servidor en el puerto `16073`:
+
+```bash
+make run_server
+```
+
+### Ejecutar el Cliente
+
+Para iniciar el cliente y conectarse al servidor:
+
+```bash
+make run_client
+```
+
+### Ejecutar las Pruebas
+
+Para ejecutar el script de pruebas:
+
+```bash
+make test
+```
+
+### Limpiar el Proyecto
+
+Para limpiar los archivos temporales y compilados:
+
+```bash
+make clean
+```
+
+## Detalles del Sistema
+
+- **Servidor**: Escucha en `127.0.0.1` en el puerto especificado, maneja hasta tres solicitudes por cliente y responde con la fecha, la hora o un mensaje de error.
+- **Cliente**: Conecta al servidor en `127.0.0.1` en el puerto especificado, envía hasta tres mensajes (FECHA o HORA) y muestra las respuestas del servidor.
+- **Pruebas**: Un script de prueba (`test/test_serv.py`) que conecta al servidor y envía tres mensajes para verificar la funcionalidad.
+
+## Requisitos
+
+- Python 3.x
+- `make` instalado
+
+## Notas
+
+- Asegúrate de que el puerto `16071` esté disponible y no sea bloqueado por el firewall.
+- Si tienes algún problema, revisa los mensajes de error y asegúrate de que Python 3 esté correctamente instalado y accesible como `python3`.
+```
+
+Puedes guardar este contenido en un archivo llamado `README.txt` en el directorio del proyecto. Este archivo proporcionará una guía clara sobre cómo clonar el repositorio, navegar al directorio correcto y ejecutar los comandos necesarios para iniciar el servidor, el cliente y ejecutar las pruebas.
