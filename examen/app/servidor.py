@@ -18,6 +18,20 @@ class Server:
         response = self.generate_response(message)
         client_socket.send(response.encode('utf-8'))
 
+    def handle_client_connection(self, client_socket, client_data):
+        data = client_socket.recv(1024).decode('utf-8').strip()
+        if data:
+            client_info = client_data[client_socket]
+            if client_info['requests'] < 3:
+                self.send_response(client_socket, data)
+                client_info['requests'] += 1
+            if client_info['requests'] == 3:
+                return True  # Indica que la conexión debe cerrarse
+        else:
+            print("Client disconnected unexpectedly.")
+            return True  # Indica que la conexión debe cerrarse
+        return False
+
     def start_server(self):
         server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         server_socket.bind(('127.0.0.1', self.port))
@@ -39,22 +53,11 @@ class Server:
                     inputs.append(client_socket)
                     client_data[client_socket] = {'requests': 0}
                 else:
-                    data = s.recv(1024).decode('utf-8').strip()
-                    if data:
-                        client_info = client_data[s]
-                        if client_info['requests'] < 3:
-                            self.send_response(s, data)
-                            client_info['requests'] += 1
-                        if client_info['requests'] == 3:
-                            inputs.remove(s)
-                            s.close()
-                            del client_data[s]
-                            print(f"Connection closed after 3 requests.")
-                    else:
-                        print("Client disconnected unexpectedly.")
+                    if self.handle_client_connection(s, client_data):
                         inputs.remove(s)
                         s.close()
                         del client_data[s]
+                        print(f"Connection closed.")
 
             for s in exceptional:
                 print(f"Handling exceptional condition for {s.getpeername()}")
