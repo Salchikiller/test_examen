@@ -59,4 +59,74 @@ make clean
 - Si tienes algún problema, revisa los mensajes de error y asegúrate de que Python 3 esté correctamente instalado y accesible como `python3`.
 ```
 
-Puedes guardar este contenido en un archivo llamado `README.txt` en el directorio del proyecto. Este archivo proporcionará una guía clara sobre cómo clonar el repositorio, navegar al directorio correcto y ejecutar los comandos necesarios para iniciar el servidor, el cliente y ejecutar las pruebas.L
+Puedes guardar este contenido en un Claro, aquí tienes un prompt detallado y específico, pero sin incluir el código, para que otro ChatGPT pueda replicar los pasos necesarios para pasar el enunciado:
+
+### Prompt Completo
+
+### Instrucciones Generales
+
+Vamos a realizar los siguientes pasos para desarrollar un proyecto cliente-servidor en Python, realizar pruebas unitarias, y configurar un Makefile. El objetivo es implementar y verificar la funcionalidad mediante un proceso iterativo de pruebas y desarrollo.
+
+### Paso 1: Crear Pruebas que Fallen (Test n)
+
+1. **Crear Pruebas Unitarias Iniciales que Fallan**:
+    - Desarrolla pruebas unitarias que estén diseñadas para fallar.
+    - Estas pruebas deben verificar las siguientes funcionalidades:
+        - Responder con la fecha actual cuando se envía el mensaje "FECHA".
+        - Responder con la hora actual cuando se envía el mensaje "HORA".
+        - Responder con "ERROR" cuando se envía cualquier otro mensaje no reconocido.
+    - Asegúrate de que estas pruebas fallen inicialmente para confirmar que aún no se ha implementado la funcionalidad.
+
+2. **Especificaciones de las Pruebas**:
+    - **Test 1**: Verifica que el servidor responde correctamente con la fecha actual ("FECHA").
+    - **Test 2**: Verifica que el servidor responde correctamente con la hora actual ("HORA").
+    - **Test 3**: Verifica que el servidor responde con "ERROR" para cualquier mensaje no reconocido.
+    - **Test 4**: Verifica la respuesta del servidor a mensajes adicionales (por ejemplo, "HELLO").
+
+### Paso 2: Implementar el Servidor y Cliente
+
+3. **Desarrollar el Código del Servidor**:
+    - Implementa un servidor en Python que:
+        - Escucha conexiones en una dirección y puerto especificados.
+        - Maneja múltiples conexiones de clientes simultáneamente utilizando `select`.
+        - Genera respuestas basadas en los mensajes recibidos:
+            - "FECHA" -> fecha actual.
+            - "HORA" -> hora actual.
+            - Cualquier otro mensaje -> "ERROR".
+        - Cierra la conexión después de manejar tres solicitudes de un cliente.
+
+4. **Desarrollar el Código del Cliente**:
+    - Implementa un cliente en Python que:
+        - Se conecta al servidor en la dirección y puerto especificados.
+        - Envía tres mensajes al servidor (pueden ser "FECHA", "HORA" o cualquier otro mensaje).
+        - Recibe y muestra las respuestas del servidor.
+        - Cierra la conexión después de enviar tres mensajes.
+
+### Paso 3: Hacer que las Pruebas Pasen (Test n OK)
+
+5. **Corregir las Pruebas para que Pasen**:
+    - Una vez que el código del servidor esté implementado, actualiza las pruebas unitarias para que verifiquen correctamente las respuestas generadas por el servidor.
+    - Asegúrate de que todas las pruebas pasen ejecutándolas nuevamente.
+    - Las pruebas deben confirmar que el servidor responde correctamente con la fecha, hora y "ERROR" según corresponda.
+
+### Paso 4: Configurar el Makefile
+
+6. **Configurar un Makefile para Automatizar Tareas**:
+    - Crea un Makefile con las siguientes reglas:
+        - `run_server`: Inicia el servidor en el puerto especificado.
+        - `run_client`: Inicia el cliente y se conecta al servidor en el puerto especificado.
+        - `test`: Ejecuta todas las pruebas unitarias para verificar la funcionalidad.
+        - `clean`: Limpia los archivos temporales y compilados generados por el proyecto.
+
+### Entrega Final
+
+7. **Entrega del Proyecto**:
+    - Asegúrate de que el proyecto contenga:
+        - Las pruebas iniciales que fallan (`test_1.py`, `test_2.py`, `test_3.py`, `test_4.py`).
+        - Las pruebas corregidas que pasan (`test_1_ok.py`, `test_2_ok.py`, `test_3_ok.py`, `test_4_ok.py`).
+        - El código del cliente (`cliente.py`).
+        - El código del servidor (`servidor.py`).
+        - El Makefile correctamente configurado.
+    - Verifica que todas las pruebas pasen ejecutando `make test`.
+
+Estas instrucciones detalladas deberían permitir que cualquier persona sin contexto previo pueda entender y replicar el proceso de desarrollo, pruebas y configuración del proyecto cliente-servidor en Python.
