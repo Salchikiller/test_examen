@@ -1,4 +1,10 @@
+git clone https://git.eps.ceu.es/ped/examen
+- usuario: correo Hasta el arroba
+- contraseña: número de alumno
 
+git config credential.helper "cache --timeout=7200"
+git config --global user.email "tu correo"
+git config --global user.name "tu nombre"
 ```
 
 ## Instrucciones
